@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực Đơn Món Ăn - Bếp Nhà Tận Tâm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .search-box-wrap {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .search-input {
+            width: 100%;
+            max-width: 500px;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 2px solid var(--wood-brown);
+            border-radius: 30px;
+            outline: none;
+            background-color: white;
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo" onclick="location.href='index.html'">Bếp Nhà Tận Tâm</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="thucdon.html" style="color: var(--burgundy);">Thực đơn </a></li>
+                <li><a href="index.html#lien-he">Liên hệ</a></li>
+            </ul>
+        </nav>
+        <a href="thucdon.html" class="cta-btn">☎ ĐẶT TIỆC NGAY</a>
+    </header>
+
+    <!-- Section Thực Đơn -->
+    <section class="menu-section" style="margin-top: 70px;">
+        <div class="section-title">
+            <h2>THỰC ĐƠN PHÚ QUÝ - MÓN ĂN ĐẶC SẮC</h2>
+            <p>Hệ thống mâm cỗ trọn gói phong phú từ truyền thống đến hiện đại của Bếp Nhà Tận Tâm</p>
+        </div>
+        
+        <!-- Ô tìm kiếm món ăn nhanh -->
+        <div class="search-box-wrap">
+            <input type="text" id="searchDish" class="search-input" placeholder="🔍 Nhập tên món ăn cần tìm (VD: Gà, Tôm, Lẩu, Bò...)" onkeyup="filterDishes()">
+        </div>
+
+        <!-- Các nút lọc danh mục nhóm món -->
+        <div class="menu-tabs">
+            <button class="tab-btn active" onclick="filterCategory('all', this)">Tất cả </button>
+            <button class="tab-btn" onclick="filterCategory('khaivi', this)">Khai Vị</button>
+            <button class="tab-btn" onclick="filterCategory('monchinh', this)">Món Chính</button>
+            <button class="tab-btn" onclick="filterCategory('haisan', this)">Hải Sản</button>
+            <button class="tab-btn" onclick="filterCategory('monlau', this)">Món Lẩu</button>
+            <button class="tab-btn" onclick="filterCategory('trangmieng', this)">Tráng Miệng</button>
+        </div>
+
+        <!-- Lưới danh sách 100+ món ăn -->
+        <div class="menu-grid" id="menuGrid">
+            
+            <!-- NHÓM KHAI VỊ (1 đến 18) -->
+            <div class="menu-item-card" data-category="khaivi"><div class="menu-img-wrap"><img src="images/mon_khaivi_1.jpg" alt="Khai Vị Tứ Hân Hoan" onclick="openLightbox(this.src)" style="cursor: pointer;"></div><div class="menu-content"><h4>Khai Vị Tứ Hân Hoan</h4><p>Sự kết hợp hoàn hảo giữa chả ghẹ nhồi mai, tôm tẩm cốm chiên giòn, nem chua rán và chả cá thác lác ống tre, ăn kèm sốt chua ngọt.</p><div class="menu-footer"><span class="price">Khai vị</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="khaivi"><div class="menu-img-wrap"><img src="images/mon_khaivi_2.jpg" alt="Khai Vị Tổng Hợp 4 Mùa"></div><div class="menu-content"><h4>Khai Vị Tổng Hợp 4 Mùa</h4><p>Bày trí trên mẹt tre mộc mạc gồm giò lụa, nem rán giòn rụm, chả lá lốt thơm lừng và các món chiên xù đặc sắc.</p><div class="menu-footer"><span class="price">Khai vị</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="khaivi"><div class="menu-img-wrap"><img src="images/mon_khaivi_3.jpg" alt="Khai Vị Đất Việt"></div><div class="menu-content"><h4>Khai Vị Đất Việt</h4><p>Gồm giò thủ giòn sần sật, nem giò rán giòn tan, chả lá lốt và bò cuộn nấm kim chi đậm đà.</p><div class="menu-footer"><span class="price">Khai vị</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="khaivi"><div class="menu-img-wrap"><img src="images/mon_khaivi_4.jpg" alt="Khai Vị Thượng Hạng"></div><div class="menu-content"><h4>Khai Vị Thượng Hạng</h4><p>Nổi bật với món chả quấn trứng muối/thanh cua đẹp mắt ở trung tâm, kết hợp chả ghẹ, giò lụa và nem rán truyền thống.</p><div class="menu-footer"><span class="price">Khai vị</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="khaivi"><div class="menu-img-wrap"><img src="images/mon_khaivi_5.jpg" alt="Súp Gà Ngô Nấm Đặc Biệt"></div><div class="menu-content"><h4>Súp Gà Ngô Nấm Đặc Biệt</h4><p>Món súp nóng hổi, sánh mịn với thịt gà xé sợi, ngô ngọt, nấm hương và trứng cút bổ dưỡng.</p><div class="menu-footer"><span class="price">Khai vị</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="khaivi"><div class="menu-img-wrap"><img src="images/mon_khaivi_6.jpg" alt="Khai Vị Tứ Quý"></div><div class="menu-content"><h4>Khai Vị Tứ Quý</h4><p>Sự kết hợp lạ miệng giữa giò lụa truyền thống, hoành thánh chiên giòn, chả lá lốt và thanh cua/phô mai que chiên xù vàng rộm.</p><div class="menu-footer"><span class="price">Khai vị</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="khaivi"><div class="menu-img-wrap"><img src="images/mon_khaivi_7.jpg" alt="Ram Hải Sản Sốt Mayonise"></div><div class="menu-content"><h4>Ram Hải Sản Sốt Mayonise</h4><p>Những cuốn chả chiên xù giòn rụm bên ngoài, nhân bùi béo bên trong, trang trí tươi mát với dưa leo.</p><div class="menu-footer"><span class="price">Khai vị</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="khaivi"><div class="menu-img-wrap"><img src="images/mon_khaivi_8.jpg" alt="Giò Hoa Lược Vàng"></div><div class="menu-content"><h4>Khoai Tây Chiên Bơ Tỏi</h4><p>Món giò thái lát tinh tế với nhân trứng muối, rau củ và mộc nhĩ tạo hình đẹp mắt như đóa hoa nở rộ trên đĩa xanh.</p><div class="menu-footer"><span class="price">Khai vị</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="khaivi"><div class="menu-img-wrap"><img src="images/mon_khaivi_9.jpg" alt="Súp Cua Thượng Hạng"></div><div class="menu-content"><h4>Súp Cua Thượng Hạng</h4><p>Món súp sánh mịn, ấm nóng với thịt cua tươi, thanh cua, bắp ngọt và nấm, rắc thêm hành ngò và tiêu thơm lừng.</p><div class="menu-footer"><span class="price">Khai vị</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+
+            <!-- NHÓM MÓN CHÍNH (19 đến 55) -->
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_1.jpg" alt="Gà Nướng Tây Bắc"></div><div class="menu-content"><h4>Gà Nướng Tây Bắc</h4><p>Gà vườn săn chắc, da giòn vàng óng, thơm mùi lá chanh tươi.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_2.jpg" alt="Gà Hấp Cải Bẹ Xanh"></div><div class="menu-content"><h4>Gà Hấp Cải Bẹ Xanh</h4><p>Thịt gà ta luộc da vàng óng, thịt ngọt chắc, bày trên lớp cải ngồng luộc xanh mướt giữ trọn vị thanh ngọt tự nhiên.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_3.jpg" alt="Combo Gà Luộc & Xôi Hoa Hồng Cát Tường"></div><div class="menu-content"><h4>Combo Gà Luộc & Xôi Hoa Hồng Cát Tường</h4><p>Gà ta hấp lá chanh ăn kèm đĩa xôi nếp dẻo tạo hình những đóa hoa hồng rực rỡ nhiều màu sắc (xanh, tím, vàng) vô cùng nghệ thuật.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_4.jpg" alt="Gà Ta Sân Vườn Hấp Hành"></div><div class="menu-content"><h4>Gà Ta Sân Vườn Hấp Hành</h4><p>Gà luộc nguyên con chặt miếng xếp đầy đặn, rắc hành lá thơm lừng, phục vụ kèm đĩa rau răm tươi và bát muối ớt chanh chuẩn vị.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_5.jpg" alt="Gà không Lối Thoát"></div><div class="menu-content"><h4>Gà Không Lối Thoát</h4><p>Lớp vỏ xôi chiên giòn rụm cắt múi cau đều đặn ôm trọn phần nhân gà nấm bên trong, rắc thêm đậu phộng bùi béo và hành phi.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_6.jpg" alt="Gà Quay Da Giòn Sốt Mật Ong"></div><div class="menu-content"><h4>Gà Quay Da Giòn Sốt Mật Ong</h4><p>Gà quay nguyên con màu cánh gián óng ả, da giòn thơm phức mùi gia vị đặc trưng, ăn kèm đồ chua, rau thơm và muối tiêu chanh ớt.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_7.jpg" alt="Gà Ta Nấu Cung Đình"></div><div class="menu-content"><h4>Gà Ta Nấu Cung Đình</h4><p>Món gà hầm đậm đà với khoai tây, cà rốt mềm nhừ trong phần nước sốt sánh vàng óng ánh, thơm mùi thảo mộc và nghệ tươi.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_8.jpg" alt="Bò Sốt Chua Ngọt"></div><div class="menu-content"><h4>Bò Sốt Chua Ngọt</h4><p>Bắp bò giòn sần sật giữ trọn vị ngọt tự nhiên.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_9.jpg" alt="Thăng Bò Cháy Tỏi"></div><div class="menu-content"><h4>Thăng Bò Cháy Tỏi</h4><p>Thịt bò tươi mềm mọng cháy tỏi đậm vị.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_10.jpg" alt="Vịt Quay Rút Xương"></div><div class="menu-content"><h4>Vịt Quay Rút Xương</h4><p>Thịt vịt quay da giòn rụm ăn kèm bánh bao chiên vàng giòn bùi béo.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_11.jpg" alt="Bò lúc lắc khoai tây"></div><div class="menu-content"><h4>Bò lúc lắc khoai tây</h4><p>Thịt bò cắt khối vuông xào săn mềm kèm khoai tây chiên giòn tan.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_12.jpg" alt="Bò sốt nấm kim châm"></div><div class="menu-content"><h4>Bò sốt nấm kim châm</h4><p>Thịt bò xào đậm vị kết hợp nấm kim châm giòn ngọt thanh mát.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_13.jpg" alt="Gỏi Bắp Bò Rau Mầm"></div><div class="menu-content"><h4>Gỏi Bắp Bò Rau Mầm</h4><p>Thịt bò mềm mọng cuốn kèm bánh phồng tôm giòn rụm.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_14.jpg" alt="Chân Giò Rút Xương Chiên Giòn"></div><div class="menu-content"><h4>Chân Giò Rút Xương Chiên Giòn</h4><p>Chân giò quay da giòn thơm phức ăn kèm xôi nếp cẩm dẻo thơm.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_15.jpg" alt="Xôi Lá Dứa Hoa Đậu Xanh"></div><div class="menu-content"><h4>Xôi Lá Dứa Hoa Đậu Xanh</h4><p>Xôi lá Dứa dẻo mịn tạo hình trái tim với hoa đậu xanh béo ngọt ở giữa.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_16.jpg" alt="Xôi Lá Cẩm Hoa Đậu Xanh"></div><div class="menu-content"><h4>Xôi Lá Cẩm Hoa Đậu Xanh</h4><p>Xôi tím dẻo thơm trang trí hoa đậu xanh cốt dừa béo ngậy đẹp mắt.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_17.jpg" alt="Xôi ngũ sắc tạo hình"></div><div class="menu-content"><h4>Xôi ngũ sắc tạo hình</h4><p>Xôi hai màu dẻo thơm ép khuôn hình giọt nước rắc hành phi thơm phức.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_18.jpg" alt="Bún Bò Trộn Rau Củ"></div><div class="menu-content"><h4>Bún Bò Trộn Rau Củ</h4><p>Thịt bò xào thơm mềm ăn kèm các loại rau củ thái sợi thanh mát và nước mắm chua ngọt.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_19.jpg" alt="Xôi Cốm Hạt Sen"></div><div class="menu-content"><h4>Xôi Cốm Hạt Sen</h4><p>Xôi cốm dẻo thơm màu xanh tự nhiên kết hợp cùng hạt sen bùi béo ngọt dịu.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monchinh"><div class="menu-img-wrap"><img src="images/mon_chinh_20.jpg" alt="Gỏi Bò Xoài Xanh"></div><div class="menu-content"><h4>Gỏi Bò Xoài Xanh</h4><p>Thịt bò mềm trộn đều với xoài xanh thái sợi, rau thơm và hành tím chua ngọt kích thích vị giác.</p><div class="menu-footer"><span class="price">Món chính</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+
+            <!-- NHÓM HẢI SẢN (56 đến 75) -->
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_1.jpg" alt="Tôm Rang Muối"></div><div class="menu-content"><h4>Tôm Rang Muối</h4><p>Tôm sú chắc thịt phủ lớp muối giòn thơm đậm đà đưa cơm.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_2.jpg" alt="Tôm Hấp Nước Dừa"></div><div class="menu-content"><h4>Tôm Hấp Nước Dừa</h4><p>Tôm sú tươi ngọt được trang trí bắt mắt bên trong trái dừa xiêm.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_3.jpg" alt="Gỏi Hải Sản"></div><div class="menu-content"><h4>Gỏi Hải Sản</h4><p>Món gỏi thập cẩm tươi ngon gồm tôm, mực kết hợp rau củ thanh mát.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_4.jpg" alt="Tôm Rang Muối Ớt"></div><div class="menu-content"><h4>Tôm Rang Muối Ớt</h4><p>Tôm rang muối đậm vị kèm chén muối ớt chanh chua cay kích thích.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_5.jpg" alt="Tôm Viên Chiên Xù"></div><div class="menu-content"><h4>Tôm Viên Chiên Xù</h4><p>Tôm bọc lớp bột chiên giòn rụm ăn kèm sốt mayonnaise béo ngậy.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_6.jpg" alt="Tôm Chiên Xù Salad"></div><div class="menu-content"><h4>Tôm Chiên Xù Salad</h4><p>Tôm chiên xù vàng giòn phục vụ cùng rau xanh tươi và sốt trộn.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_7.jpg" alt="Chả Giò Tôm Rế"></div><div class="menu-content"><h4>Chả Giò Tôm Rế</h4><p>Lớp bánh rế giòn tan bọc trọn nhân tôm thịt thơm ngọt bên trong.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_8.jpg" alt="Tôm Chiên Cốm Dừa"></div><div class="menu-content"><h4>Tôm Chiên Cốm Dừa</h4><p>Tôm tẩm bột phủ lớp dừa nạo sấy giòn rụm, thơm bùi đặc trưng.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_9.jpg" alt="Tôm Xóc Tỏi Ớt"></div><div class="menu-content"><h4>Tôm Xóc Tỏi Ớt</h4><p>Tôm tươi tẩm ướp đậm đà, xóc tỏi ớt thơm lừng hấp dẫn.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_10.jpg" alt="Tôm Hấp Hành Gừng"></div><div class="menu-content"><h4>Tôm Hấp Hành Gừng</h4><p>Tôm sú hấp cùng hành tây, hành lá và gừng tươi giữ trọn vị ngọt tự nhiên.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_11.jpg" alt="Tôm Sốt Dứa"></div><div class="menu-content"><h4>Tôm Sốt Dứa</h4><p>Tôm sú chiên giòn áo lớp sốt béo ngậy, trình bày vô cùng bắt mắt trong trái dứa.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_12.jpg" alt="Mực Hấp Sốt Thái"></div><div class="menu-content"><h4>Mực Hấp Sốt Thái</h4><p>Mực ống trắng ngần, giòn sực ăn kèm nước sốt Thái chua cay đậm đà hấp dẫn.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_13.jpg" alt="Mực Xào Rau Củ"></div><div class="menu-content"><h4>Mực Xào Rau Củ</h4><p>Mực tươi xào vừa chín tới giữ độ giòn ngọt, kết hợp bông cải và ớt chuông thanh mát.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_14.jpg" alt="Hải Sản Nướng Giấy Bạc"></div><div class="menu-content"><h4>Hải Sản Nướng Giấy Bạc</h4><p>Tôm, mực cùng nấm và rau củ bọc giấy bạc nướng giúp giữ trọn vẹn hương vị tinh túy.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_15.jpg" alt="Mực Hấp Hành Gừng"></div><div class="menu-content"><h4>Mực Hấp Hành Gừng</h4><p>Mực tươi thái lát hấp hành gừng ớt cay nồng, dùng kèm bông cải xanh giòn ngọt.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_16.jpg" alt="Gỏi Tôm Mè Rang"></div><div class="menu-content"><h4>Gỏi Tôm Mè Rang</h4><p>Gỏi tôm thanh mát trộn cùng các loại rau củ, rắc thêm mè rang thơm bùi quyến rũ.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_17.jpg" alt="Cá Hấp Bún Tàu"></div><div class="menu-content"><h4>Cá Hấp Bún Tàu</h4><p>Cá nguyên con hấp xì dầu cùng bún tàu, nấm và rau thơm, thịt cá dai ngọt đậm đà.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_18.jpg" alt="Gỏi Tôm Xoài Xanh"></div><div class="menu-content"><h4>Gỏi Tôm Xoài Xanh</h4><p>Món gỏi tôm thanh mát kết hợp cùng xoài xanh thái sợi, đậu phộng và hành phi thơm lừng.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_19.jpg" alt="Tôm Sốt Me Trình Bày Dưa Leo"></div><div class="menu-content"><h4>Tôm Sốt Me Trình Bày Dưa Leo</h4><p>Tôm chiên giòn sốt me đậm đà, phủ hành phi và trang trí hoa hồng cùng dưa leo tươi mát.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_20.jpg" alt="Gỏi Mực Xoài Xanh"></div><div class="menu-content"><h4>Gỏi Mực Xoài Xanh</h4><p>Mực tươi giòn sực trộn đều với xoài xanh, rau thơm, đậu phộng và nước mắm chua ngọt.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="haisan"><div class="menu-img-wrap"><img src="images/mon_haisan_21.jpg" alt="Cơm Chiên Cua Biển"></div><div class="menu-content"><h4>Cơm Chiên Cua Biển</h4><p>Cơm chiên vàng giòn thơm phức được trang trí nguyên con cua biển đẹp mắt và hấp dẫn.</p><div class="menu-footer"><span class="price">Hải sản</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+           
+            <!-- NHÓM MÓN LẨU (76 đến 90) -->
+            <div class="menu-item-card" data-category="monlau"><div class="menu-img-wrap"><img src="images/mon_lau_1.jpg" alt="Lẩu Hải Sản Thập Cẩm"></div><div class="menu-content"><h4>Lẩu Hải Sản Thập Cẩm</h4><p>Set lẩu hải sản phong phú gồm tôm, mực, nghêu và các loại chả cuốn đẹp mắt kèm rau tươi.</p><div class="menu-footer"><span class="price">Món lẩu</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monlau"><div class="menu-img-wrap"><img src="images/mon_lau_2.jpg" alt="Lẩu Thái Hải Sản Nấm"></div><div class="menu-content"><h4>Lẩu Thái Hải Sản Nấm</h4><p>Nước dùng lẩu Thái chua cay đậm đà ăn kèm tôm, mực, nghêu và các loại nấm tươi ngon.</p><div class="menu-footer"><span class="price">Món lẩu</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monlau"><div class="menu-img-wrap"><img src="images/mon_lau_3.jpg" alt="Lẩu Nấm Hải Sản Kèm Bún"></div><div class="menu-content"><h4>Lẩu Nấm Hải Sản Kèm Bún</h4><p>Món lẩu thanh ngọt vị nấm tự nhiên, ăn kèm tôm, mực, chả cá và bún tươi.</p><div class="menu-footer"><span class="price">Món lẩu</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="monlau"><div class="menu-img-wrap"><img src="images/mon_lau_4.jpg" alt="Lẩu Bò Nhúng Giấm"></div><div class="menu-content"><h4>Lẩu Bò Nhúng Giấm</h4><p>Thịt bò tươi mềm nhúng nước dùng giấm thanh nhẹ, cuốn bánh tráng cùng rau sống và dứa.</p><div class="menu-footer"><span class="price">Món lẩu</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+           
+            <!-- NHÓM TRÁNG MIỆNG (91 đến 105) -->
+            <div class="menu-item-card" data-category="trangmieng"><div class="menu-img-wrap"><img src="images/mon_trangmieng_1.jpg" alt="Chè Hạt Sen Long Nhãn"></div><div class="menu-content"><h4>Chè Hạt Sen Long Nhãn</h4><p>Thanh ngọt tự nhiên, giải nhiệt hoàn hảo sau bữa tiệc.</p><div class="menu-footer"><span class="price">Tráng miệng</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="trangmieng"><div class="menu-img-wrap"><img src="images/mon_trangmieng_2.jpg" alt="Rau Câu Dừa Sơn Mài"></div><div class="menu-content"><h4>Rau Câu Dừa Sơn Mài</h4><p>Thạch dừa giòn mát lạnh thơm ngậy nước cốt dừa tự nhiên.</p><div class="menu-footer"><span class="price">Tráng miệng</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="trangmieng"><div class="menu-img-wrap"><img src="images/mon_trangmieng_3.jpg" alt="Chè Khúc Bạch Hạnh Nhân"></div><div class="menu-content"><h4>Chè Khúc Bạch Hạnh Nhân</h4><p>Khúc bạch mềm mịn thơm sữa kết hợp hạnh nhân lát giòn tan.</p><div class="menu-footer"><span class="price">Tráng miệng</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="trangmieng"><div class="menu-img-wrap"><img src="images/mon_trangmieng_4.jpg" alt="Trái Cây Theo Mùa Tươi Sạch"></div><div class="menu-content"><h4>Trái Cây Theo Mùa Tươi Sạch</h4><p>Đĩa trái cây phong phú: dưa hấu, nho, xoài, thanh long ngọt mát.</p><div class="menu-footer"><span class="price">Tráng miệng</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+            <div class="menu-item-card" data-category="trangmieng"><div class="menu-img-wrap"><img src="images/mon_trangmieng_5.jpg" alt="Chè Đậu Xanh Nha Đam"></div><div class="menu-content"><h4>Chè Đậu Xanh Nha Đam</h4><p>Thanh mát, giải nhiệt, tốt cho sức khỏe mọi lứa tuổi.</p><div class="menu-footer"><span class="price">Tráng miệng</span><span style="font-size: 13px; font-weight: 600; color: var(--wood-brown);">Bếp Nhà Tận Tâm</span></div></div></div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 22px; margin-bottom: 10px;">BẾP NHÀ TẬN TÂM – QUẢNG NGÃI</h3>
+        <p>© 2026 Bếp Nhà Tận Tâm. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript bộ lọc và tìm kiếm món -->
+    <script>
+        function filterCategory(category, btnElement) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            const cards = document.querySelectorAll('.menu-item-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function filterDishes() {
+            let input = document.getElementById('searchDish').value.toLowerCase();
+            let cards = document.querySelectorAll('.menu-item-card');
+
+            cards.forEach(card => {
+                let title = card.querySelector('h4').innerText.toLowerCase();
+                if (title.includes(input)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    <script>
+    function openLightbox(src) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        lightboxImg.src = src;
+        lightbox.style.display = 'flex';
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+    }
+</script>
+</body>
+</html>

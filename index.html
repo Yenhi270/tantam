@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bếp Nhà Tận Tâm - Nhà Hàng Lưu Động & Tiệc Tại Nhà Quảng Ngãi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Bổ sung hiệu ứng hoành tráng riêng cho trang chủ */
+        .hero-banner {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('images/banner.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+            padding: 0 20px;
+            position: relative;
+        }
+        .hero-badge {
+            background-color: var(--gold);
+            color: #1a1a1a;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: -50px auto 0 auto;
+            position: relative;
+            z-index: 10;
+            padding: 0 20px;
+        }
+        .stat-card {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-bottom: 4px solid var(--wood-brown);
+        }
+        .stat-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--wood-brown);
+            margin-bottom: 5px;
+        }
+        .stat-card p {
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo" onclick="location.href='index.html'">Bếp Nhà Tận Tâm</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" style="color: var(--burgundy);">Trang chủ</a></li>
+                <li><a href="#gioi-thieu">Về chúng tôi</a></li>
+                <li><a href="thucdon.html">Thực đơn</a></li>
+                <li><a href="#dich-vu">Dịch vụ tiệc</a></li>
+                <li><a href="#lien-he">Liên hệ</a></li>
+            </ul>
+        </nav>
+        <a href="thucdon.html" class="cta-btn">☎ ĐẶT TIỆC NGAY</a>
+    </header>
+
+    <!-- Hero Section Hoành Tráng -->
+    <section class="hero-banner">
+        <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 58px; margin-bottom: 15px; letter-spacing: 2px; text-shadow: 0 3px 6px rgba(0,0,0,0.7); max-width: 900px;">MANG TRỌN MÂM CỖ ĐẾN TẬN NHÀ BẠN</h1>
+        <p style="font-size: 19px; max-width: 750px; margin-bottom: 35px; opacity: 0.95; text-shadow: 0 2px 4px rgba(0,0,0,0.6);">Chuyên tiệc cưới hỏi, tân gia, giỗ chạp và sự kiện trọn gói đẳng cấp. Kết hợp giữa hương vị tinh tế truyền thống và phong cách phục vụ chuẩn nhà hàng 5 sao.</p>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+            <a href="thucdon.html" class="cta-btn" style="font-size: 16px; padding: 14px 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">KHÁM PHÁ CÁC MÓN ĂN</a>
+            <a href="#lien-he" style="border: 2px solid white; color: white; padding: 14px 32px; border-radius: 4px; text-decoration: none; font-weight: 600; transition: 0.3s; background-color: rgba(0,0,0,0.4); font-size: 16px;">TƯ VẤN BÁO GIÁ NHANH</a>
+        </div>
+    </section>
+
+    <!-- Khối Thống Kê Uy Tín Nổi Lên (Stats Bar) -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>100+</h3>
+            <p>Bữa Tiệc Thành Công</p>
+        </div>
+        <div class="stat-card">
+            <h3>100+</h3>
+            <p>Món Ăn Đặc Sắc</p>
+        </div>
+        <div class="stat-card">
+            <h3>100%</h3>
+            <p>An Toàn Vệ Sinh</p>
+        </div>
+        <div class="stat-card">
+            <h3>5 Sao</h3>
+            <p>Chất Lượng Phục Vụ</p>
+        </div>
+    </div>
+
+    <!-- Giới Thiệu Về Thương Hiệu -->
+    <section id="gioi-thieu" style="padding: 120px 8% 80px 8%; background-color: var(--bg-cream); text-align: center;">
+        <div class="section-title">
+            <span style="color: var(--burgundy); font-weight: 700; letter-spacing: 2px; font-size: 14px; text-transform: uppercase; display: block; margin-bottom: 10px;">Về Bếp Nhà Tận Tâm</span>
+            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 44px; color: var(--wood-brown); margin-bottom: 20px;">SỰ TẬN TÂM TRONG TỪNG HƯƠNG VỊ MÂM CỖ</h2>
+            <p style="max-width: 850px; margin: 0 auto; color: #555; font-size: 17px; line-height: 1.8;">
+                Được thành lập với sứ mệnh nâng tầm những bữa tiệc gia đình tại Quảng Ngãi. Chúng tôi mang đến giải pháp nấu tiệc lưu động trọn gói từ A-Z: nguyên liệu tươi sạch chọn lọc mỗi ngày, đầu bếp tay nghề cao cùng đội ngũ phục vụ chu đáo, lịch sự giúp gia chủ trọn vẹn niềm vui đón khách.
+            </p>
+        </div>
+    </section>
+
+    <!-- Các Dịch Vụ Tiệc Lưu Động Hoành Tráng -->
+    <section id="dich-vu" style="padding: 90px 8%; background-color: #F5F1EB;">
+        <div class="section-title" style="text-align: center; margin-bottom: 50px;">
+            <span style="color: var(--burgundy); font-weight: 700; letter-spacing: 2px; font-size: 14px; text-transform: uppercase; display: block; margin-bottom: 10px;">Dịch Vụ Trọn Gói</span>
+            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 44px; color: var(--wood-brown); margin-bottom: 10px;">LOẠI HÌNH TIỆC PHỤC VỤ</h2>
+            <p style="color: #666; font-size: 16px;">Đáp ứng hoàn hảo mọi quy mô sự kiện từ ấm cúng đến quy mô lớn</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px;">
+            <!-- Dịch vụ 1 -->
+            <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: left; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="height: 220px; overflow: hidden;"><img src="images/tiec_cuoi.jpg" alt="Tiệc Cưới Hỏi" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div style="padding: 30px;">
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--wood-brown); margin-bottom: 12px;">Tiệc Cưới - Hỏi Trọn Gói</h3>
+                    <p style="font-size: 15px; color: #666; margin-bottom: 20px; line-height: 1.6;">Setup không gian sang trọng, mâm cỗ kết hợp món ăn truyền thống và hiện đại đẹp mắt, phục vụ chuyên nghiệp tận nơi.</p>
+                    <a href="thucdon.html" style="color: var(--wood-brown); font-weight: 700; text-decoration: none; font-size: 14px;">Xem thực đơn tiệc cưới ➔</a>
+                </div>
+            </div>
+            <!-- Dịch vụ 2 -->
+            <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: left; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="height: 220px; overflow: hidden;"><img src="images/tiec_tania.jpg" alt="Tiệc Tân Gia" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div style="padding: 30px;">
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--wood-brown); margin-bottom: 12px;">Tiệc Tân Gia - Khai Trương</h3>
+                    <p style="font-size: 15px; color: #666; margin-bottom: 20px; line-height: 1.6;">Chia sẻ niềm vui ngày mới cùng người thân, đối tác với những mâm cỗ thịnh soạn, ấm cúng và tài lộc.</p>
+                    <a href="thucdon.html" style="color: var(--wood-brown); font-weight: 700; text-decoration: none; font-size: 14px;">Xem thực đơn tân gia ➔</a>
+                </div>
+            </div>
+            <!-- Dịch vụ 3 -->
+            <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: left; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="height: 220px; overflow: hidden;"><img src="images/tiec_giothuot.jpg" alt="Tiệc Giỗ Chạp" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div style="padding: 30px;">
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--wood-brown); margin-bottom: 12px;">Tiệc Giỗ Chạp - Gia Đình</h3>
+                    <p style="font-size: 15px; color: #666; margin-bottom: 20px; line-height: 1.6;">Chuẩn bị mâm cỗ chỉn chu, trang nghiêm, giữ trọn hương vị truyền thống quê hương để tưởng nhớ gia tiên.</p>
+                    <a href="thucdon.html" style="color: var(--wood-brown); font-weight: 700; text-decoration: none; font-size: 14px;">Xem thực đơn giỗ chạp ➔</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lời Cam Kết Hoành Tráng -->
+    <section style="padding: 100px 8%; background-color: var(--wood-brown); color: white; text-align: center;">
+        <span style="color: var(--gold); font-weight: 700; letter-spacing: 2px; font-size: 14px; text-transform: uppercase; display: block; margin-bottom: 10px;">Giá Trị Cốt Lõi</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 42px; margin-bottom: 20px; color: var(--gold);">TẠI SAO HÀNG NGÀN KHÁCH HÀNG TIN CHỌN BẾP NHÀ TẬN TÂM?</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; margin-top: 50px; text-align: left;">
+            <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; border-left: 4px solid var(--gold);">
+                <h4 style="color: var(--gold); font-size: 20px; margin-bottom: 12px; font-family: 'Cormorant Garamond', serif;">✔️ Nguyên Liệu 100% Tươi Sạch</h4>
+                <p style="font-size: 15px; opacity: 0.9; line-height: 1.6;">Thực phẩm rõ nguồn gốc, nhập mới mỗi ngày, đạt chuẩn an toàn vệ sinh thực phẩm khắt khe nhất.</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; border-left: 4px solid var(--gold);">
+                <h4 style="color: var(--gold); font-size: 20px; margin-bottom: 12px; font-family: 'Cormorant Garamond', serif;">✔️ Đầu Bếp Tay Nghề Cao</h4>
+                <p style="font-size: 15px; opacity: 0.9; line-height: 1.6;">Đội ngũ đầu bếp giàu kinh nghiệm, am hiểu khẩu vị đậm đà, trang trí món ăn vô cùng bắt mắt.</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; border-left: 4px solid var(--gold);">
+                <h4 style="color: var(--gold); font-size: 20px; margin-bottom: 12px; font-family: 'Cormorant Garamond', serif;">✔️ Trọn Gói & Gọn Gàng</h4>
+                <p style="font-size: 15px; opacity: 0.9; line-height: 1.6;">Hỗ trợ setup bàn ghế, chén dĩa sang trọng và dọn dẹp sạch sẽ hoàn toàn sau khi tiệc kết thúc.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Liên Hệ Đặt Tiệc Nổi Bật -->
+    <section id="lien-he" style="padding: 100px 8%; background-color: var(--bg-cream); text-align: center;">
+        <div class="section-title">
+            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 44px; color: var(--wood-brown); margin-bottom: 15px;">SẴN SÀNG LÊN MÂM CHO BỮA TIỆC CỦA BẠN?</h2>
+            <p style="font-size: 17px; color: #555; max-width: 700px; margin: 0 auto 30px auto;">Hãy để Bếp Nhà Tận Tâm đồng hành cùng gia đình bạn tạo nên một bữa tiệc ấm cúng, trọn vẹn và đáng nhớ nhất.</p>
+        </div>
+        <div>
+            <a href="tel:0393607170" class="cta-btn" style="font-size: 20px; padding: 18px 40px; display: inline-block; box-shadow: 0 6px 20px rgba(30,61,89,0.3);">☎ HOTLINE TƯ VẤN ĐẶT TIỆC: 0393607170</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 26px; margin-bottom: 12px; color: var(--gold);">BẾP NHÀ TẬN TÂM – QUẢNG NGÃI</h3>
+        <p style="font-size: 16px; margin-bottom: 10px;">Nhà hàng lưu động mang trọn hương vị đẳng cấp đến mọi nhà.</p>
+        <p style="font-size: 14px; opacity: 0.7;">© 2026 Bếp Nhà Tận Tâm. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
